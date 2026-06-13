@@ -1,0 +1,8 @@
+# Private source CVs. Only the sanitized public copies are published.
+assets/cv/CV-DavoudKalantari.pdf
+assets/cv/CV-DavoudKalantari_ENG.pdf
+
+# Local operating-system files.
+.DS_Store
+Thumbs.db
+desktop.ini
