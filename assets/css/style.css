@@ -734,10 +734,10 @@ a {
 .project-card-featured {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(18rem, 1.08fr);
+  grid-template-columns: minmax(0, 38%) minmax(0, 62%);
   align-items: stretch;
-  gap: 1.25rem;
-  padding: 1.05rem;
+  gap: 1rem;
+  padding: 0.9rem;
   border-color: rgba(89, 211, 220, 0.24);
   background:
     linear-gradient(135deg, rgba(89, 211, 220, 0.12), transparent 34%),
@@ -746,7 +746,8 @@ a {
 
 .project-preview {
   position: relative;
-  min-height: 15rem;
+  min-height: 13.75rem;
+  max-height: 16rem;
   overflow: hidden;
   border-radius: calc(var(--radius) - 0.45rem);
   border: 1px solid rgba(89, 211, 220, 0.18);
@@ -757,7 +758,7 @@ a {
 .project-preview img {
   width: 100%;
   height: 100%;
-  min-height: 15rem;
+  min-height: 13.75rem;
   display: block;
   object-fit: cover;
 }
@@ -765,7 +766,8 @@ a {
 .project-content {
   display: flex;
   flex-direction: column;
-  padding: 0.35rem 0.25rem 0.25rem;
+  justify-content: center;
+  padding: 0.15rem 0.2rem 0.15rem;
 }
 
 .project-kicker {
@@ -784,13 +786,27 @@ a {
 
 .project-result {
   width: fit-content;
-  margin: 0.15rem 0 0;
-  padding: 0.48rem 0.7rem;
+  margin: 0.05rem 0 0;
+  padding: 0.42rem 0.65rem;
   border-radius: 12px;
   border: 1px solid rgba(89, 211, 220, 0.2);
   color: var(--text) !important;
   background: rgba(89, 211, 220, 0.08);
   font-weight: 700;
+}
+
+.project-card-featured .project-content > p:not(.project-result) {
+  margin-bottom: 0.55rem;
+}
+
+.project-card-featured .tag-list {
+  gap: 0.42rem;
+  margin-top: 0.65rem;
+}
+
+.project-card-featured .project-actions {
+  gap: 0.55rem;
+  padding-top: 0.95rem;
 }
 
 .project-card {
@@ -979,7 +995,7 @@ a {
 
   .project-preview,
   .project-preview img {
-    min-height: 12.5rem;
+    min-height: 11rem;
   }
 
   .hero-layout {
