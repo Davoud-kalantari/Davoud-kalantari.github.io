@@ -27,7 +27,7 @@
   <rect width="1280" height="720" fill="url(#grid)"/>
   <circle cx="1030" cy="140" r="210" fill="#59d3dc" opacity="0.08"/>
   <circle cx="250" cy="560" r="230" fill="#2ab3c0" opacity="0.08"/>
-  <text x="72" y="92" fill="#59d3dc" font-family="Space Grotesk, Outfit, sans-serif" font-size="24" font-weight="700" letter-spacing="6">COMPUTER VISION PIPELINE</text>
+  <text x="72" y="92" fill="#59d3dc" font-family="Space Grotesk, Outfit, sans-serif" font-size="24" font-weight="700" letter-spacing="6">DEEP LEARNING PIPELINE</text>
   <text x="72" y="148" fill="#f8fbff" font-family="Space Grotesk, Outfit, sans-serif" font-size="52" font-weight="700">Marvel Comics Classification</text>
   <text x="72" y="196" fill="#b9c8d4" font-family="Outfit, sans-serif" font-size="26">CNNs + Vision Transformers + DINOv2 feature fusion</text>
   <g fill="none" stroke="#59d3dc" stroke-opacity="0.55" stroke-width="3">
