@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Marvel Comics Deep Learning Classification preview</title>
+  <desc id="desc">Dark data-engineering preview card showing a comic image classification pipeline with CNN, Vision Transformer, DINOv2 and late fusion accuracy.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061116"/>
+      <stop offset="0.52" stop-color="#0b1b26"/>
+      <stop offset="1" stop-color="#102f35"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#59d3dc"/>
+      <stop offset="1" stop-color="#2ab3c0"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feColorMatrix in="blur" values="0 0 0 0 0.35 0 0 0 0 0.83 0 0 0 0 0.86 0 0 0 0.55 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#59d3dc" stroke-opacity="0.12" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect width="1280" height="720" fill="url(#grid)"/>
+  <circle cx="1030" cy="140" r="210" fill="#59d3dc" opacity="0.08"/>
+  <circle cx="250" cy="560" r="230" fill="#2ab3c0" opacity="0.08"/>
+  <text x="72" y="92" fill="#59d3dc" font-family="Space Grotesk, Outfit, sans-serif" font-size="24" font-weight="700" letter-spacing="6">COMPUTER VISION PIPELINE</text>
+  <text x="72" y="148" fill="#f8fbff" font-family="Space Grotesk, Outfit, sans-serif" font-size="52" font-weight="700">Marvel Comics Classification</text>
+  <text x="72" y="196" fill="#b9c8d4" font-family="Outfit, sans-serif" font-size="26">CNNs + Vision Transformers + DINOv2 feature fusion</text>
+  <g fill="none" stroke="#59d3dc" stroke-opacity="0.55" stroke-width="3">
+    <path d="M234 360H438"/>
+    <path d="M582 360H786"/>
+    <path d="M930 360H1068"/>
+    <path d="M438 300H582"/>
+    <path d="M438 420H582"/>
+    <path d="M786 300H930"/>
+    <path d="M786 420H930"/>
+  </g>
+  <g font-family="Outfit, sans-serif" font-size="22" font-weight="700">
+    <rect x="74" y="278" width="160" height="164" rx="28" fill="#0d2230" stroke="#59d3dc" stroke-opacity="0.38"/>
+    <text x="113" y="350" fill="#f8fbff">8,153</text>
+    <text x="108" y="386" fill="#b9c8d4" font-size="18">images</text>
+    <rect x="438" y="238" width="144" height="124" rx="24" fill="#102634" stroke="#59d3dc" stroke-opacity="0.35"/>
+    <text x="486" y="308" fill="#f8fbff">CNN</text>
+    <rect x="438" y="382" width="144" height="124" rx="24" fill="#102634" stroke="#59d3dc" stroke-opacity="0.35"/>
+    <text x="484" y="452" fill="#f8fbff">ViT</text>
+    <rect x="786" y="238" width="144" height="124" rx="24" fill="#102634" stroke="#59d3dc" stroke-opacity="0.35"/>
+    <text x="818" y="308" fill="#f8fbff">DINOv2</text>
+    <rect x="786" y="382" width="144" height="124" rx="24" fill="#102634" stroke="#59d3dc" stroke-opacity="0.35"/>
+    <text x="816" y="452" fill="#f8fbff">XAI</text>
+    <rect x="1068" y="286" width="150" height="148" rx="28" fill="url(#cyan)" filter="url(#glow)"/>
+    <text x="1100" y="348" fill="#061116">92.77%</text>
+    <text x="1104" y="386" fill="#061116" font-size="18">late fusion</text>
+  </g>
+  <g fill="#59d3dc">
+    <circle cx="438" cy="300" r="6"/>
+    <circle cx="438" cy="420" r="6"/>
+    <circle cx="786" cy="300" r="6"/>
+    <circle cx="786" cy="420" r="6"/>
+    <circle cx="1068" cy="360" r="6"/>
+  </g>
+</svg>
