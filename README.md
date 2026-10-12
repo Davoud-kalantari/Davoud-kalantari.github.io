@@ -13,9 +13,6 @@ assets/
     main.js
   img/
     profile-main.jpg
-  cv/
-    CV_Davoud_Kalantari_EN_public.pdf
-    CV_Davoud_Kalantari_IT_public.pdf
 README.md
 ```
 
@@ -25,10 +22,7 @@ Open `index.html` directly in a browser by double-clicking it. No server, packag
 
 ## Where to replace placeholders
 
-- English CV: `assets/cv/CV_Davoud_Kalantari_EN_public.pdf`
-- Italian CV: `assets/cv/CV_Davoud_Kalantari_IT_public.pdf`
 - LinkedIn profile: `https://www.linkedin.com/in/davoud-kalantari/`
-- GitHub profile: `https://github.com/Davoud-kalantari`
 - GitHub repository links for projects: replace the `href="#"` project buttons in `index.html`
 
 ## Notes about the profile image
