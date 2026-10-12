@@ -5,6 +5,7 @@ const tiltItems = document.querySelectorAll("[data-tilt]");
 const particlesRoot = document.querySelector(".particles");
 const scenePanel = document.querySelector(".scene-panel");
 const splineFrame = document.querySelector(".spline-scene");
+const roleSwitcher = document.querySelector("[data-role-switcher]");
 
 if (navToggle && navLinks) {
   navToggle.addEventListener("click", () => {
@@ -18,6 +19,19 @@ if (navToggle && navLinks) {
       navToggle.setAttribute("aria-expanded", "false");
     });
   });
+}
+
+if (roleSwitcher && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const roles = ["Data Scientist", "Data Engineer", "Data Analytics", "BI Analyst", "Machine Learning Engineer"];
+  let roleIndex = 0;
+  window.setInterval(() => {
+    roleSwitcher.classList.add("is-changing");
+    window.setTimeout(() => {
+      roleIndex = (roleIndex + 1) % roles.length;
+      roleSwitcher.textContent = roles[roleIndex];
+      roleSwitcher.classList.remove("is-changing");
+    }, 180);
+  }, 2800);
 }
 
 if ("IntersectionObserver" in window) {

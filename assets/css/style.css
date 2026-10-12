@@ -252,6 +252,11 @@ a {
   letter-spacing: -0.045em;
 }
 
+.hero .eyebrow {
+  margin: 0.85rem 0 0;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+}
+
 .hero-text,
 .section-heading p,
 .scene-copy p,
@@ -334,7 +339,7 @@ a {
 
 .hero-metrics {
   display: grid;
-  grid-template-columns: 1.2fr 1.15fr 0.8fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.72rem;
   margin: 0;
   padding: 0;
@@ -369,6 +374,10 @@ a {
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+.hero-metrics .metric-value {
+  color: var(--accent);
 }
 
 .metric-value-secondary {
@@ -435,12 +444,6 @@ a {
   font-weight: 600;
 }
 
-.badge-floating {
-  top: 1.55rem;
-  left: 1.55rem;
-  padding: 0.58rem 0.8rem;
-}
-
 .badge-status {
   right: 1.55rem;
   bottom: 5.55rem;
@@ -471,6 +474,29 @@ a {
   padding: 0.85rem 0.35rem 0.12rem;
 }
 
+.hero-card-footer > div:first-child {
+  min-width: 0;
+}
+
+.hero-card-footer .card-value {
+  max-width: 23rem;
+  line-height: 1.5;
+}
+
+.role-switcher-value {
+  min-height: 1.5em;
+  color: var(--accent);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+  letter-spacing: -0.025em;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.role-switcher-value.is-changing {
+  opacity: 0;
+  transform: translateY(-0.35em);
+}
+
 .card-label {
   margin: 0;
   color: var(--muted);
@@ -486,6 +512,7 @@ a {
 .signal {
   display: flex;
   align-items: flex-end;
+  flex: 0 0 auto;
   gap: 0.3rem;
 }
 
@@ -878,10 +905,106 @@ a {
   border-color: var(--line-strong);
 }
 
+#skills,
+#contact {
+  --text: #112c39;
+  --muted: #496271;
+  --accent: #087d8d;
+  --accent-strong: #087d8d;
+  --line: rgba(15, 87, 105, 0.16);
+  --line-strong: rgba(15, 124, 142, 0.36);
+  --shadow: 0 18px 42px rgba(20, 62, 77, 0.08);
+  --shadow-hover: 0 22px 48px rgba(20, 62, 77, 0.13);
+  color: var(--text);
+  background: linear-gradient(180deg, #080d12 0, #19333d 2.5rem, #abc4cb 6rem, #f8fbfc 10rem, #ffffff 65%, #e9f2f4 100%);
+}
+
+#skills,
+#experience,
+#contact {
+  padding-top: clamp(10rem, 12vw, 11rem);
+}
+
+#experience {
+  background: linear-gradient(180deg, #e9f2f4 0, #b8cdd3 3rem, #37525e 6.5rem, #080d12 10rem, #080d12 100%);
+}
+
+#skills::before,
+#contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(24, 118, 137, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(24, 118, 137, 0.045) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+#skills::after,
+#experience::before,
+#contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 10rem;
+  pointer-events: none;
+  background: radial-gradient(ellipse 55% 75% at 65% 35%, rgba(89, 211, 220, 0.18), transparent 75%);
+  opacity: 0.25;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    #skills::after,
+    #experience::before,
+    #contact::after {
+      animation: palette-transition linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+  }
+}
+
+@keyframes palette-transition {
+  from { opacity: 0; transform: translateY(-1.5rem); }
+  to { opacity: 0.25; transform: translateY(0); }
+}
+
+#skills .glass,
+#contact .glass {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: var(--line);
+  box-shadow: var(--shadow);
+}
+
+#skills .glass:hover,
+#contact .glass:hover {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-hover);
+}
+
+#skills .skill-card li {
+  background: rgba(17, 124, 143, 0.07);
+  border-color: rgba(17, 124, 143, 0.17);
+}
+
+#contact .contact-card a {
+  color: var(--text);
+  background: #f3f9fa;
+  border-color: var(--line);
+}
+
+#contact .contact-card a:hover,
+#contact .contact-card a:focus-visible {
+  background: #e2f2f4;
+  border-color: var(--line-strong);
+}
+
 .footer {
   padding: 2.25rem 0 2.75rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
+  border-top: 1px solid rgba(15, 87, 105, 0.15);
+  color: #496271;
+  background: #e9f2f4;
   text-align: center;
 }
 
@@ -1094,12 +1217,6 @@ a {
     padding: 0.72rem;
   }
 
-  .badge-floating {
-    left: 1.2rem;
-    right: auto;
-    top: 1.2rem;
-  }
-
   .badge-status {
     right: 1.2rem;
     left: auto;
@@ -1142,10 +1259,6 @@ a {
     font-size: 0.74rem;
   }
 
-  .badge-floating {
-    max-width: calc(100% - 2.4rem);
-  }
-
   .badge-status {
     right: 1.1rem;
     bottom: 5.2rem;
@@ -1162,6 +1275,10 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .role-switcher-value {
+    transition: none;
+  }
+
   html {
     scroll-behavior: auto;
   }
